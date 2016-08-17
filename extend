@@ -1,3 +1,9 @@
+/**
+* 继承工具方法
+*
+* @param {Function} subClass 子类
+* @param {Function} superClass 父类
+*/  
 function extend(subclass,superclass){
     function create(proto, c) {
         function F() {
