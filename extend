@@ -1,0 +1,14 @@
+function extend(subclass,superclass){
+    function create(proto, c) {
+        function F() {
+        }
+        F.prototype = proto;
+        var o = new F();
+        o.constructor = c;
+        return o;
+    }
+    var superObj = create(superclass.prototype,subclass);
+    subclass.prototype = superObj;
+    subclass.superclass = create(superclass.prototype,superclass);
+    return subclass;
+}
